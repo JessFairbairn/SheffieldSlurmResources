@@ -1,0 +1,2 @@
+# Sheffield Slurm Resources
+## A series of example scripts and customisations for your Slurm environment on Slurm based HPC clusters. Written for Sheffield students but parts will be useful for all Slurm users
