@@ -1,0 +1,18 @@
+# .bashrc
+
+#  every linux system will have a .bashrc, which does setup tasks each time you log in
+
+#  NOTE you should copy and paste the bits you want into the existing .bashrc
+#  file instead of replacing it as it's probably slightly different depending on
+#  the distro
+
+
+# This block is to start  tmux if available. Personal preference.
+if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
+    tmux attach -t default || tmux new -s default
+fi
+
+# User specific aliases and functions. I put these in a separate file for clarity.
+if [ -f ~/.aliases.sh ]; then
+. ~/.aliases.sh
+fi
