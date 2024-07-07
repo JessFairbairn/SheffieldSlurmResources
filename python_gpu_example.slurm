@@ -43,7 +43,10 @@ pip install torch torchvision evaluate -q
 # the -q makes it print less to the output, lots of commands have "quiet" modes
 
 echo Running training script...
-cd football_data
+cd my_code
 
 # and finally, run your actual python script
 python train.py
+
+# assorted GPU tips:
+# - the Sheffield HPC GPUs support mixed precision mode, which might speed up your code
