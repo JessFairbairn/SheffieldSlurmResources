@@ -9,8 +9,8 @@ alias lastjobid='sacct -u lip21jaf --noheader -o JobID,JobName -X -P | grep -v "
 
 # Display the logs of the currently running job as it runs:
 alias tailjob='tail -f $(ls logs/*$(lastjobid))'
-alias lastlogs='less $(ls logs/*$(lastjobid))'
+alias lastjobout='less $(ls logs/*$(lastjobid))'
 
 # I can never remember these. Time limit to avoid hogging resources (or being penalised for overuse)
-alias int_session='srun --mem=16G --pty bash -i --time=2:00:00'
-alias gpu_session='srun --mem=16G --qos=gpu --partition=gpu --gpus-per-node=1 --pty bash -i --time=2:00:00'
+alias int_session='srun --mem=16G --time=2:00:00 --pty bash -i'
+alias gpu_session='srun --mem=16G --qos=gpu --partition=gpu --gpus-per-node=1 --time=2:00:00 --pty bash -i'
