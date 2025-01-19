@@ -8,8 +8,8 @@ alias runningjobid='sacct -u lip21jaf --noheader -s r -o JobID -X'
 alias lastjobid='sacct -u lip21jaf --noheader -o JobID,JobName -X -P | grep -v "bash" | tail -1 |cut -d "|" -f 1'
 
 # Display the logs of the currently running job as it runs:
-alias tailjob='tail -f $(ls logs/*$(lastjobid))'
-alias lastjobout='less $(ls logs/*$(lastjobid))'
+alias tailjob='tail -f $(ls ~/logs/*$(lastjobid))'
+alias lastjobout='less $(ls ~/logs/*$(lastjobid))'
 
 # I can never remember these. Time limit to avoid hogging resources (or being penalised for overuse)
 alias int_session='srun --mem=16G --time=2:00:00 --pty bash -i'
