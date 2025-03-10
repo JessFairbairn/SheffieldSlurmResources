@@ -8,9 +8,8 @@ alias runningjobid='sacct -u $(whoami) --noheader -s r -o JobID -X'
 # This one will generally pick up the last one. All that grepping is so it only picks up batch jobs.
 alias lastjobid='sacct -u $(whoami) --noheader -o JobID,JobName -X -P | grep -v -e "bash" -e "\[" | tail -1 |cut -d "|" -f 1'
 
-# Display the logs of the currently running job as it runs
-# These assume job output is getting saved with filename "~/logs/<some-string>-<jobcode>"
-alias tailjob='tail -f $(ls ~/logs/*$(lastjobid))'
+# Display the logs of the currently running job as it runs:
+alias tailjob='tail -f $(ls ~/logs/*$(runningjob))'
 alias lastjobout='less $(ls ~/logs/*$(lastjobid))'
 
 # I can never remember these. Time limit to avoid hogging resources (or being penalised for overuse)
